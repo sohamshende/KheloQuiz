@@ -9,7 +9,11 @@
     {% tailwind_css %}
 </head>
 
-<body class="bg-red-500">
+<body class="min-h-screen bg-red-300 flex items-center justify-center">
+    
+    {% block content %}
+        
+        
     <div class="flex overflow-hidden flex-col pb-24 mx-auto w-full bg-zinc-100 max-w-[480px]" role="region"
         aria-label="Quiz Introduction Section">
         <div class="flex self-start">
@@ -65,6 +69,9 @@
             </button>
         </div>
     </div>
+
+{% endblock content %}
+
 </body>
 
 </html>
