@@ -1,12 +1,12 @@
 from django.shortcuts import render
 
-def home_view(request):
+def home(request):
     return render(request, 'home.html')  
 
-def signup_view(request):
+def signup(request):
     return render(request, 'signup.html')
 
-def signin_view(request):
+def signin(request):
     return render(request, 'signin.html')
 
 def reset_password(request):

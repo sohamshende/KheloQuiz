@@ -16,15 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
-from .views import reset_password, dashboard
+from .views import home,signup,signin,reset_password, dashboard
 
 from Gen_Quiz.views import home_view
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view, name='home'),
-    path('signup/', views.signup_view, name='signup'),
-    path('signin/', views.signin_view, name='signin'),
+    path('', home, name='home'),
+    path('signup/', signup, name='signup'),
+    path('signin/', signin, name='signin'),
     path('reset-password/', reset_password, name='resetpassword'),
     path('dashboard/', dashboard, name='dashboard'),
 ]
