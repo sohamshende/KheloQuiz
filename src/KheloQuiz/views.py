@@ -11,3 +11,6 @@ def signin_view(request):
 
 def reset_password(request):
     return render(request, 'resetpassword.html')
+
+def dashboard(request):
+    return render(request, 'dashboard.html')

@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
-from .views import reset_password
+from .views import reset_password, dashboard
 
 from Gen_Quiz.views import home_view
 urlpatterns = [
@@ -26,4 +26,5 @@ urlpatterns = [
     path('signup/', views.signup_view, name='signup'),
     path('signin/', views.signin_view, name='signin'),
     path('reset-password/', reset_password, name='resetpassword'),
+    path('dashboard/', dashboard, name='dashboard'),
 ]

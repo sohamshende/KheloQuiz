@@ -21,7 +21,7 @@
                 <a href="{% url 'resetpassword' %}" class="text-blue-600 font-bold hover:underline">Forgot Password?</a>
             </div>
             
-            <button class="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 text-white font-extrabold text-xl shadow-lg hover:opacity-90 transition">Sign In</button>
+            <button class="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 text-white font-extrabold text-xl shadow-lg hover:opacity-90 transition"> <a href="{% url 'dashboard' %}"> Sign In </a></button>
         </form>
         
         <p class="text-center text-gray-700 text-lg">Don't have an account? <a href="{% url 'signup' %}" class="text-blue-600 font-bold hover:underline">Sign Up</a></p>
