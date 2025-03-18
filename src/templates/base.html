@@ -15,15 +15,15 @@
 <div class="flex items-center space-x-4">
     <h1 class="text-xl font-extrabold text-indigo-600">KheloQuiz</h1>
 
-    <a href="#" class="text-black font-semibold border border-gray-700 px-4 py-1 rounded-lg transition duration-300 hover:bg-indigo-200 hover:Background-indigo-600">
+    <a href="{% url "dashboard" %}" class="text-black font-semibold border border-gray-700 px-4 py-1 rounded-lg transition duration-300 hover:bg-indigo-200 hover:Background-indigo-600">
         Home
     </a>
 
-    <a href="#" class="text-black font-semibold border border-gray-700 px-4 py-1 rounded-lg transition duration-300 hover:bg-indigo-200 hover:Background-indigo-600">
+    <a href="{% url "history" %}" class="text-black font-semibold border border-gray-700 px-4 py-1 rounded-lg transition duration-300 hover:bg-indigo-200 hover:Background-indigo-600">
         History
     </a>
 
-    <a href="#" class="text-black font-semibold border border-gray-700 px-4 py-1 rounded-lg transition duration-300 hover:bg-indigo-200 hover:Background-indigo-600">
+    <a href="{% url "about"%}" class="text-black font-semibold border border-gray-700 px-4 py-1 rounded-lg transition duration-300 hover:bg-indigo-200 hover:Background-indigo-600">
         About
     </a>
 </div>

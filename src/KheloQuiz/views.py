@@ -14,3 +14,10 @@ def reset_password(request):
 
 def dashboard(request):
     return render(request, 'dashboard.html')
+
+def history(request):
+    return render(request, 'history.html')
+
+def about(request):
+    return render(request, 'about.html')
+    
