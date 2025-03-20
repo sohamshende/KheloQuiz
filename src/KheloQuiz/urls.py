@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import home,signup,signin,reset_password,dashboard,history,about
+from .views import home,signup,signin,reset_password,dashboard,history,about,setting
 from Gen_Quiz.views import home_view
 
 urlpatterns = [
@@ -28,4 +28,6 @@ urlpatterns = [
     path('dashboard/', dashboard, name='dashboard'),
     path('history/', history, name='history'),
     path('about/', about, name = 'about'),
+    path('setting/', setting, name = 'setting'),
+    
 ]
