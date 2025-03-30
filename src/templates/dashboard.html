@@ -12,14 +12,18 @@
         <section class="mb-6">
             <h2 class="text-xl font-bold mb-4">Generate Quiz</h2>
             <div class="space-y-4">
-                <input type="text" placeholder="Enter Quiz Topic" class="w-full md:w-2/3 p-4 border rounded-lg shadow-md">
+                <form method="post" class="space-y-4" action="{% url 'create_quiz' %}">
+                    {% csrf_token %}
+                <input type="text" name="topic" placeholder="Enter Quiz Topic" class="w-full md:w-2/3 p-4 border rounded-lg shadow-md">
                 <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-                    <select class="p-4 border rounded-lg shadow-md bg-white text-gray-900 w-full sm:w-auto">
+                    <select name="num_questions" class="p-4 border rounded-lg shadow-md bg-white text-gray-900 w-full sm:w-auto">
                         <option disabled selected>Choose Number of Questions</option>
                         <option value="3">3 Questions</option>
                         <option value="5">5 Questions</option>
                         <option value="10">10 Questions</option>
                     </select>
+                    <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">Generate Quiz</button>
+        </form>
                     <a href="{% url 'generate_quiz' %}" class="bg-gradient-to-r from-pink-500 to-indigo-600 text-white px-6 py-2 rounded-full text-lg w-full sm:w-auto shadow-lg">
                         Generate Quiz
                     </a>                </div>
