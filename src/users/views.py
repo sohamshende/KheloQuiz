@@ -1,21 +1,24 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm  
 from django.contrib.auth import login, logout
+from .forms import CustomUserCreationForm 
 from .middlewares import auth, guest
 # Create your views here.
+
 
 @guest
 def register_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request,user)
+            age = form.cleaned_data.get('age')
+            UserProfile.objects.create(user=user, age=age)
+            login(request, user)
             return redirect('dashboard')
     else:
-        initial_data = {'username':'', 'password1':'','password2':""}
-        form = UserCreationForm(initial=initial_data)
-    return render(request, 'registration/register.html',{'form':form})
+        form = CustomUserCreationForm(initial={'username': '', 'first_name': '', 'last_name': '', 'email': '', 'age': '', 'password1': '', 'password2': ''})
+    return render(request, 'registration/register.html', {'form': form})
 
 @guest
 def login_view(request):
